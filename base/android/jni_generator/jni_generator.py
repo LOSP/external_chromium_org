@@ -514,7 +514,7 @@ class JNIFromJavaP(object):
   @staticmethod
   def CreateFromClass(class_file, options):
     class_name = os.path.splitext(os.path.basename(class_file))[0]
-    p = subprocess.Popen(args=['javap', '-s', class_name],
+    p = subprocess.Popen(args=['javap', '-s', class_file],
                          cwd=os.path.dirname(class_file),
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
